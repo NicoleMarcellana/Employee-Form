@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Form</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <div class="container">
+        <h2> Employee Registration Form </h2>
+        <form id="employeeform" action="#" method="POST" enctype="multipart/form-data">
+            <div class="flex-container">
+                <div class="form-group">
+                    <h3>Full Name</h3>
+                    <div class="name-fields">
+                        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h3>Date of Birth</h3>
+                    <input type="date" id="dob" name="dob" required >
+                </div>
+            </div>
+            <div class="flex-container">
+                <div class="form-group">
+                    <h3>Email</h3>
+                    <input type="email" id="email" name="email"  placeholder="example@example.com" required> 
+                </div>
+                <div class="form-group">
+                    <h3>Phone Number</h3>
+                    <input type="tel" maxlength="11" pattern="09\d{9}" id="number" name="number" placeholder="Please enter a valid phone number." required>  
+                </div>
+            </div>
+            <div class="address-container">
+                <div class="form-group">
+                    <h3>Address</h3>
+                    <input type="text" id="street-1" name="street-1" placeholder="Street Address" required>  
+                    <input type="text" id="street-2" name="street-2" placeholder="Street Address Line 2">
+                    <div class="flex-container"> 
+                        <select name="city" id="city"> 
+                            <option value=""> Select City </option>
+                        </select>   
+                        <select name="barangay" id="barangay">
+                            <option value=""> Select Barangay </option>    
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <h3> Applying Position </h3>
+                <input type="text" id="position" name="position" required>
+            </div>
+            <div class="form-group-1">
+                <h3> Type of Work</h3> 
+                <input type="radio" class="work-choice-1" name="work-choices" value="Permanent">
+                <label for="work-choice-1" class="choices">Permanent</label><br>  
+                
+                <input type="radio" id="work-choice-2" name="work-choices" value="Temporary">
+                <label for="work-choice-2" class="choices">Temporary</label><br>  
+                
+                <input type="radio" id="work-choice-3" name="work-choices" value="both">
+                <label for="work-choice-3" class="choices">Both</label> <br>
+                
+                <input type="radio" id="work-choice-4" name="work-choices" value="other">
+                <label for="work-choice-4" class="choices">Other</label><br>  
+            </div>
+            <input type="text" id="other-work" name="other_work" style="display: none;" class="other" placeholder="Please type another option here">
+            <div class="form-group">
+                <h3> Please Upload your Resume</h3> 
+                <div class="file-upload-container" id="fileUploadContainer">
+                    <input type="file" id="fileInput" class="file-input" accept=".pdf, .doc, .docx" multiple>
+                    <label for="fileInput" class="file-label">
+                        <div class="drop-area">
+                            <img src ="css/icon/cloud-computing.png" class="imgupload">
+                            <span class ="browse">Browse Files</span>
+                            <span></span>
+                            <span>Drag and drop files here</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <h3>Cover Letter or Additional Information </h3>
+                <textarea name="cover-letter" rows="8" cols="25" placeholder="Type here..."></textarea>
+            </div>
+            <div class="form-group-1">
+                <h3>Veteran Status (Please select the option that describes your status the best)</h3> 
+                <input type="radio" id="status-choice-1" name="status-choices" value="veteran">
+                <label for="status-choice-1" class="choices">I am a veteran</label><br>  
+
+                <input type="radio" id="status-choice-2" name="status-choices" value="disabled">
+                <label for="status-choice-2" class="choices"> I am a special disabled veteran </label><br>
+                
+                <input type="radio" id="status-choice-3" name="status-choices" value="">
+                <label for="status-choice-3" class="choices"> I am a recently separated veteran </label><br>  
+
+                <input type="radio" id="status-choice-4" name="status-choices" value="">
+                <label for="status-choice-4" class="choices">I am an other protected veteran </label><br>
+
+                <input type="radio" id="status-choice-5" name="status-choices" value="">
+                <label for="status-choice-5" class="choices">I am not a veteran </label><br>  
+
+                <input type="radio" id="status-choice-6" name="status-choices" value="">
+                <label for="status-choice-6" class="choices">Prefer not to answer</label><br>  
+            </div>
+            <div class="form-group-1">
+                <h3>Gender</h3> 
+                <input type="radio" id="gender-choice-1" name="gender-choices" value="Female">
+                <label for="gender-choice-1" class="choices">Female</label><br>  
+                
+                <input type="radio" id="gender-choice-2" name="gender-choices" value="Male">
+                <label for="gender-choice-2" class="choices">Male </label><br>
+                
+                <input type="radio" id="gender-choice-3" name="gender-choices" value="transfemale">
+                <label for="gender-choice-3" class="choices">Transgender Female</label><br>  
+
+                <input type="radio" id="gender-choice-4" name="gender-choices" value="transmale">
+                <label for="gender-choice-4" class="choices">Transgender Male </label><br>
+
+                <input type="radio" id="gender-choice-5" name="gender-choices" value="none">
+                <label for="gender-choice-5" class="choices">Prefer not to answer</label><br>
+
+                <input type="radio" id="gender-choice-6" name="gender-choices" value="other">
+                <label for="gender-choice-6" class="choices"> Not Listed </label><br>  
+            </div>
+            <input type="text" id="other-gender" name="other_gender" style="display: none;" class="other" placeholder="Please type another option here">
+            <div class="form-group-1">
+                <h3>Disabilities</h3>
+                <input type="radio" id="disability-choice-1" name="disability-choices" value="">
+                <label for="disability-choice-1" class="choices"> I have no disability </label><br>
+
+                <input type="radio" id="disability-choice-2" name="disability-choices" value="">
+                <label for="disability-choice-2" class="choices">I have two or more impairments and/or disabling medical conditions</label><br>
+                
+                <input type="radio" id="disability-choice-3" name="disability-choices" value="">
+                <label for="disability-choice-3" class="choices">I have a Specific Learning Difficulty (e.g. Dyslexia/Dyspraxia/AD(H)D)</label><br>
+
+                <input type="radio" id="disability-choice-4" name="disability-choices" value="">
+                <label for="disability-choice-4" class="choices"> I have a social/communication impairment such as Asperger's syndrome/other autistic spectrum disorder</label><br>
+
+                <input type="radio" id="disability-choice-5" name="disability-choices" value="">
+                <label for="disability-choice-5" class="choices">I have a long standing illness or health condition such as cancer, HIV, diabetes, chronic heart disease, or epilepsy </label><br>
+
+                <input type="radio" id="disability-choice-6" name="disability-choices" value="">
+                <label for="disability-choice-6" class="choices">I have a physical impairment or mobility issues (e.g. difficulty using arms/using a wheelchair or crutches) </label><br>
+
+                <input type="radio" id="disability-choice-7" name="disability-choices" value="">
+                <label for="disability-choice-7" class="choices">I am deaf or have a serious hearing impairment </label><br>
+
+                <input type="radio" id="disability-choice-8" name="disability-choices" value="">
+                <label for="disability-choice-8" class="choices">I am blind or have a serious visual impairment uncorrected by glasses </label><br>
+
+                <input type="radio" id="disability-choice-9" name="disability-choices" value="">
+                <label for="disability-choice-9" class="choices">Prefer not to answer</label><br>
+
+                <input type="radio" id="disability-choice-10" name="disability-choices" value="">
+                <label for="disability-choice-10" class="choices">I have a disability, impairment or medical condition not listed here</label>
+                <input type="text" id="other-disability" name="other_disability" style="display: none;" class="other" placeholder="Please type another option here">
+            </div>
+            <div class="form-group-1">
+                <h3>Race</h3> 
+                <input type="radio" id="race-choice-1" name="race-choices" value="">
+                <label for="race-choice-1" class="choices">American Native or Alaska Native </label><br>
+
+                <input type="radio" id="race-choice-2" name="race-choices" value="">
+                <label for="race-choice-2" class="choices">Asian </label><br>
+
+                <input type="radio" id="race-choice-3" name="race-choices" value="">
+                <label for="race-choice-3" class="choices">Black or African American </label><br>
+
+                <input type="radio" id="race-choice-4" name="race-choices" value="">
+                <label for="race-choice-4" class="choices">White </label><br>
+
+                <input type="radio" id="race-choice-5" name="race-choices" value="">
+                <label for="race-choice-5" class="choices">Native Hawaiian or Other Pacific Islandere</label><br>
+
+                <input type="radio" id="race-choice-6" name="race-choices" value="">
+                <label for="race-choice-6" class="choices">Two or more races </label><br>
+
+                <input type="radio" id="race-choice-7" name="race-choices" value="">
+                <label for="race-choice-7" class="choices">Decline to specify</label><br>
+
+                <input type="radio" id="race-choice-8" name="race-choices" value="">
+                <label for="race-choice-8" class="choices">Other</label><br>
+            </div>
+            <input type="text" id="other-race" name="other_race" style="display: none;" class="other" placeholder="Please type another option here">
+            <div class="form-group">
+                <h3>Additional Notes</h3>
+                <textarea name="notes" rows="8" cols="25" placeholder="Type here..."></textarea>
+            </div>
+            <input type="submit" name="submit" value="Submit" class="submit">
+        </form>
+    </div>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
